@@ -2,8 +2,8 @@
 
 namespace PhpMonsters\Otp;
 
-use Illuminate\Support\ServiceProvider;
 use Illuminate\Foundation\Application;
+use Illuminate\Support\ServiceProvider;
 
 class OtpServiceProvider extends ServiceProvider
 {
@@ -25,10 +25,10 @@ class OtpServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->loadTranslationsFrom(__DIR__.'/../lang', 'otp');
- 
+
         $this->publishes([
             __DIR__.'/../resources/lang' => $this->app->langPath('vendor/otp'),
-            __DIR__.'/../config/otp.php' => config_path('otp.php')
+            __DIR__.'/../config/otp.php' => config_path('otp.php'),
         ]);
     }
 }
